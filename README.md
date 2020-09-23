@@ -1,7 +1,7 @@
 # iOS14UIPageControlFix
 兼容iOS14下设置currentImage
 
-在iOS14下UIPageControl的currentImage与pageImage私有属性与方法做了保护措施，用汇编看了下，好像是调用setCurrentImage的时候，系统直接写了一个异常抛出，为什么系统自己调用没问题呢，是因为把具体实现放到了另一个地方(貌似是C函数)，直接调用那个函数来操作，有兴趣的哥们可以尝试直接去拿那个函数去设置。
+在iOS14下UIPageControl的currentImage与pageImage私有属性被删除了，但是保留了方法设置_setPageImage，然而没什么用。反汇编看了下，系统就是直接在里面抛了个异常，打印了下日志。不知道算不算警告开发者，别瞎j8搞
 
 ```objc
 // 兼容iOS14与iOS14之前
