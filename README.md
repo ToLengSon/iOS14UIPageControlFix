@@ -1,0 +1,2 @@
+# iOS14UIPageControlFix
+兼容iOS14下设置currentImage
